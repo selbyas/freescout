@@ -207,6 +207,7 @@
             "vendor/laravel/framework/src/Illuminate/Pagination/LengthAwarePaginator.php",
             "vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php",
             "vendor/laravel/framework/src/Illuminate/Session/FileSessionHandler.php",
+            "vendor/laravel/framework/src/Illuminate/Session/CacheBasedSessionHandler.php",
             "vendor/nesbot/carbon/src/Carbon/Carbon.php",
             "vendor/laravel/framework/src/Illuminate/Cache/Repository.php",
             "vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php",
