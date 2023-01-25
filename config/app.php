@@ -158,7 +158,7 @@ return [
     | FreeScout website
     |-------------------------------------------------------------------------
     */
-    'freescout_url' => 'https://selby.as/forks/freescout',
+    'freescout_url' => 'https://github.com/selbyas/freescout',
 
     /*
     |--------------------------------------------------------------------------
