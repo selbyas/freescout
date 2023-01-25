@@ -1,7 +1,11 @@
 {
     "name": "freescout-helpdesk/freescout",
     "description": "Free self-hosted helpdesk and shared mailbox (Zendesk / Help Scout alternative)",
-    "keywords": ["helpdesk", "help desk", "shared mailbox"],
+    "keywords": [
+        "helpdesk",
+        "help desk",
+        "shared mailbox"
+    ],
     "license": "AGPL-3.0",
     "authors": [
         {
@@ -11,7 +15,6 @@
     ],
     "require": {
         "php": ">=7.1.0",
-
         "symfony/debug": "v3.4.18",
         "devfactory/minify": "1.0.7",
         "fideloper/proxy": "3.3.4",
@@ -37,7 +40,8 @@
         "javoscript/laravel-macroable-models": "1.0.4",
         "ramsey/uuid": "3.9.6",
         "symfony/polyfill-mbstring": "v1.24.0",
-        "webklex/php-imap": "4.1.1"
+        "webklex/php-imap": "4.1.1",
+        "ext-pdo": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "v3.2.0",
@@ -45,7 +49,6 @@
         "fzaninotto/faker": "v1.9.2",
         "mockery/mockery": "1.1.0",
         "phpunit/phpunit": "6.5.8",
-
         "symfony/polyfill-ctype": "v1.10.*",
         "vlucas/phpdotenv": "v2.5.1",
         "symfony/css-selector": "v3.4.18",
@@ -113,7 +116,6 @@
             "Symfony\\Component\\Debug\\": "overrides/symfony/debug/",
             "Symfony\\Component\\HttpFoundation\\": "overrides/symfony/http-foundation/",
             "Chumper\\Zipper\\Repositories\\": "overrides/chumper/zipper/src/Chumper/Zipper/Repositories/",
-
             "Illuminate\\Support\\": "overrides/laravel/framework/src/Illuminate/Support/",
             "Illuminate\\Http\\": "overrides/laravel/framework/src/Illuminate/Http/",
             "Illuminate\\Database\\Eloquent\\": "overrides/laravel/framework/src/Illuminate/Database/Eloquent/",
@@ -191,7 +193,6 @@
             "vendor/symfony/http-foundation/ResponseHeaderBag.php",
             "vendor/chumper/zipper/src/Chumper/Zipper/Repositories/ZipRepository.php",
             "vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/URI/Host.php",
-
             "vendor/laravel/framework/src/Illuminate/Support/Collection.php",
             "vendor/laravel/framework/src/Illuminate/Http/Request.php",
             "vendor/symfony/http-foundation/ParameterBag.php",
