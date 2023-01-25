@@ -1,6 +1,7 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Kundestøtte fra Selby",
+    "short_name": "S-Support",
+    "description": "Her finner du all kommunikasjon og annen relevant informasjon rundt ditt kundeforhold",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -8,12 +9,14 @@
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#ffffff",
+    "theme_color": "#098FB9",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
 }
