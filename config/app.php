@@ -1,7 +1,7 @@
 <?php
 
-$key = env('APP_KEY', null);
-$key_file = env("APP_KEY_FILE", null);
+$key = env('APP_KEY');
+$key_file = env("APP_KEY_FILE");
 if (empty($key) && !empty($key_file)) {
     $key = trim(file_get_contents($key_file));
 }
@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'name' => 'FreeScout',
+    'name' => env('APP_NAME', 'Support - Selby AS'),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,7 +173,7 @@ return [
     | FreeScout eepository
     |-------------------------------------------------------------------------
     */
-    'freescout_repo' => 'https://github.com/freescout-helpdesk/freescout',
+    'freescout_repo' => 'https://github.com/selbyas/freescout',
 
     /*
     |--------------------------------------------------------------------------
@@ -233,13 +233,13 @@ return [
     |--------------------------------------------------------------------------
     */
     'colors' => [
-        'main_light'    => '#0078d7',
-        'main_dark'     => '#005a9e',
+        'main_light'    => '#098fb9', # original: #0078d7
+        'main_dark'     => '#077294', # original: #005a9e
         'note'          => '#ffc646',
         'text_note'     => '#e6b216',
         'text_customer' => '#8d959b',
         'text_user'     => '#8d959b',
-        'bg_user_reply' => '#f4f8fd',
+        'bg_user_reply' => '#cee9f1', # original: #f4f8fd
         'bg_note'       => '#fffbf1',
     ],
 
@@ -251,7 +251,7 @@ return [
     'options' => [
         'alert_fetch'        => ['default' => false],
         'alert_fetch_period' => ['default' => 15], // min
-        'email_branding'     => ['default' => true],
+        'email_branding'     => ['default' => false],
         'open_tracking'      => ['default' => true],
         'subscription_defaults' => ['default' => []],
     ],
@@ -495,7 +495,7 @@ return [
         'MailHelper'   => App\Misc\Mail::class,
         'Option'       => App\Option::class,
         'Str'          => Illuminate\Support\Str::class,
-        // Autodiscovery did not work for this one, becasuse it's composer.json
+        // Autodiscovery did not work for this one, because it's composer.json
         // does not have a `extra` section.
         'Updater'      => Codedge\Updater\UpdaterFacade::class,
     ],
