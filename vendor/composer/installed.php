@@ -3,7 +3,7 @@
         'name' => 'selbyas/freescout',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '51fac192d724bdaf0c5ad2937983978f4022afb0',
+        'reference' => 'fe30c3e82e0e4d42ae9b05660bf08ac29d5578d7',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -929,7 +929,7 @@
         'selbyas/freescout' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '51fac192d724bdaf0c5ad2937983978f4022afb0',
+            'reference' => 'fe30c3e82e0e4d42ae9b05660bf08ac29d5578d7',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

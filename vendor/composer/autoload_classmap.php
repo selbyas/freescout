@@ -2294,7 +2294,7 @@ return array(
     'Illuminate\\Routing\\SortedMiddleware' => $vendorDir . '/laravel/framework/src/Illuminate/Routing/SortedMiddleware.php',
     'Illuminate\\Routing\\UrlGenerator' => $baseDir . '/overrides/laravel/framework/src/Illuminate/Routing/UrlGenerator.php',
     'Illuminate\\Routing\\ViewController' => $vendorDir . '/laravel/framework/src/Illuminate/Routing/ViewController.php',
-    'Illuminate\\Session\\CacheBasedSessionHandler' => $vendorDir . '/laravel/framework/src/Illuminate/Session/CacheBasedSessionHandler.php',
+    'Illuminate\\Session\\CacheBasedSessionHandler' => $baseDir . '/overrides/laravel/framework/src/Illuminate/Session/CacheBasedSessionHandler.php',
     'Illuminate\\Session\\Console\\SessionTableCommand' => $vendorDir . '/laravel/framework/src/Illuminate/Session/Console/SessionTableCommand.php',
     'Illuminate\\Session\\CookieSessionHandler' => $vendorDir . '/laravel/framework/src/Illuminate/Session/CookieSessionHandler.php',
     'Illuminate\\Session\\DatabaseSessionHandler' => $vendorDir . '/laravel/framework/src/Illuminate/Session/DatabaseSessionHandler.php',
