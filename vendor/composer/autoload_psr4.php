@@ -62,8 +62,10 @@ return array(
     'Mews\\Purifier\\' => array($vendorDir . '/mews/purifier/src'),
     'Lord\\Laroute\\Routes\\' => array($baseDir . '/overrides/lord/laroute/src/Routes'),
     'Lord\\Laroute\\' => array($vendorDir . '/lord/laroute/src'),
+    'League\\Flysystem\\AwsS3v3\\' => array($vendorDir . '/league/flysystem-aws-s3-v3/src'),
     'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
+    'JmesPath\\' => array($vendorDir . '/mtdowling/jmespath.php/src'),
     'Javoscript\\MacroableModels\\' => array($baseDir . '/overrides/javoscript/laravel-macroable-models/src', $vendorDir . '/javoscript/laravel-macroable-models/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
@@ -118,6 +120,7 @@ return array(
     'Barryvdh\\Debugbar\\' => array($baseDir . '/overrides/barryvdh/laravel-debugbar/src', $vendorDir . '/barryvdh/laravel-debugbar/src'),
     'Axn\\Laroute\\Routes\\' => array($baseDir . '/overrides/axn/laravel-laroute/src/Routes'),
     'Axn\\Laroute\\' => array($vendorDir . '/axn/laravel-laroute/src'),
+    'Aws\\' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'App\\' => array($baseDir . '/app'),
     '' => array($vendorDir . '/nesbot/carbon/src'),
 );
