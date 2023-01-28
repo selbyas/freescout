@@ -18,7 +18,7 @@ return [
     | or any other location as required by the application or its packages.
     */
 
-    'version' => '1.8.52-dev',
+    'version' => '1.8.52-rc2',
 
     /*
     |--------------------------------------------------------------------------
@@ -158,7 +158,7 @@ return [
     | FreeScout website
     |-------------------------------------------------------------------------
     */
-    'freescout_url' => 'https://github.com/selbyas/freescout',
+    'freescout_url' => 'https://freescout.net',
 
     /*
     |--------------------------------------------------------------------------
