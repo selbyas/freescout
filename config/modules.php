@@ -144,10 +144,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'freescout',
+        'vendor' => 'selbyas',
         'author' => [
-            'name'  => 'FreeScout',
-            'email' => 'support@freescout.net',
+            'name'  => 'Selby AS',
+            'email' => 'support@selby.as',
         ],
     ],
     /*
