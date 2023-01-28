@@ -34,3 +34,4 @@ Thumbs.db
 .well-known
 /resources/lang/module.*
 /vendor/Expectation.php
+/vendor/_laravel_idea/
