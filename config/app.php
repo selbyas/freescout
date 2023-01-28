@@ -173,7 +173,7 @@ return [
     | FreeScout eepository
     |-------------------------------------------------------------------------
     */
-    'freescout_repo' => 'https://github.com/freescout-helpdesk/freescout',
+    'freescout_repo' => 'https://github.com/selbyas/freescout',
 
     /*
     |--------------------------------------------------------------------------
