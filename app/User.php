@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Watson\Rememberable\Rememberable;
+use function asset;
 use function config;
 use function md5;
 use function urlencode;
@@ -789,7 +790,8 @@ class User extends Authenticatable
     public function getGravatarPhoto(): string
     {
         $hash = md5(Str::lower($this->email));
-        $default = urlencode(config('selby-support.default_profile_picture_url'));
+        $default = config('selby-support.default_profile_picture_url') ?? asset('/img/default-avatar.png');
+        $default = urlencode($default);
 
         return "https://www.gravatar.com/avatar/$hash?s=50&d=$default";
     }
