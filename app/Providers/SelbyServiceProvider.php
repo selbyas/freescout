@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Customer;
 use App\User;
+use Config;
+use Eventy;
 use Illuminate\Support\ServiceProvider;
 use function blank;
 use function data_get;
@@ -23,6 +25,12 @@ class SelbyServiceProvider extends ServiceProvider
             if(blank(data_get($customer, 'photo_url'))) {
                 data_set($customer, 'photo_url', $customer->getGravatarPhoto());
             }
+        });
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        Eventy::addFilter('footer.text', function() {
+            return '<img src="https://cdn.selby.as/brand/selby-logo-banner-320x89.png" width="183" alt="Selby Logo Banner"><br>'
+                    . '<a href="'.Config::get('app.freescout_repo').'">' . Config::get('app.name') . '</a>';
         });
     }
 
