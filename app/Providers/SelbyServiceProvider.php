@@ -29,8 +29,15 @@ class SelbyServiceProvider extends ServiceProvider
 
         /** @noinspection PhpUndefinedMethodInspection */
         Eventy::addFilter('footer.text', function() {
-            return '<img src="https://cdn.selby.as/brand/selby-logo-banner-320x89.png" width="100" alt="Selby Logo Banner"><br>'
-                    . '<a href="https://selby.no">' . Config::get('app.name') . '</a>';
+            return  '<a href="https://selby.no">'
+                    . '<img src="https://cdn.selby.as/brand/selby-logo-icon-180x180.png" width="64" alt="Selby Logo Icon"><br>'
+                    . Config::get('app.name')
+                    . '</a>';
+        });
+
+        /** @noinspection PhpUndefinedMethodInspection */
+        Eventy::addFilter('login.banner', function() {
+            return 'https://cdn.selby.as/brand/selby-logo-banner-320x89.png';
         });
     }
 
