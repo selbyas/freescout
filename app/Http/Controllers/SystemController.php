@@ -59,7 +59,7 @@ class SystemController extends Controller
                 $non_writable_cache_file = '';
             }
         }
-        
+
 
         // Check if public symlink exists, if not, try to create.
         $public_symlink_exists = true;
@@ -148,7 +148,7 @@ class SystemController extends Controller
             $date_text = '?';
             $last_successful_run = Option::get($option_name.'_last_successful_run');
             if ($last_successful_run) {
-                $date_ = Carbon::createFromTimestamp($last_successful_run);
+                $date = Carbon::createFromTimestamp($last_successful_run);
                 $date_text = User::dateFormat($date);
             }
             $status_texts[] = __('Last successful run:').' '.$date_text;
@@ -384,7 +384,7 @@ class SystemController extends Controller
                 if (!empty($payload['data']['command'])) {
                     $html .= '<pre>'.print_r(unserialize($payload['data']['command']), 1).'</pre>';
                 }
-                
+
                 $html .= '<pre>'.$job->exception.'</pre>';
 
                 return response($html);
