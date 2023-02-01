@@ -787,7 +787,7 @@ class User extends Authenticatable
         \Cache::forget('user_web_notifications_'.$this->id);
     }
 
-    public function getPhotoUrlAttribute($value): string
+    public function getPhotoUrlAttribute($value): ?string
     {
         if(blank($value) && filled(config('selby-support.default_profile_picture_url'))) {
             return $this->getGravatarPhoto();
