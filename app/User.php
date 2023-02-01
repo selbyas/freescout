@@ -787,15 +787,6 @@ class User extends Authenticatable
         \Cache::forget('user_web_notifications_'.$this->id);
     }
 
-    public function getPhotoUrlAttribute($value): ?string
-    {
-        if(blank($value) && filled(config('selby-support.default_profile_picture_url'))) {
-            return $this->getGravatarPhoto();
-        }
-
-        return $value;
-    }
-
     public function getGravatarPhoto(): string
     {
         $hash = md5(Str::lower($this->email));
@@ -807,7 +798,9 @@ class User extends Authenticatable
 
     public function getPhotoUrl($default_if_empty = true)
     {
-        if (!empty($this->photo_url) || !$default_if_empty) {
+        if(filled($this->photo_url) && str_is('*://*', $this->photo_url)) {
+            return $this->photo_url;
+        } else if (!empty($this->photo_url) || !$default_if_empty) {
             if (!empty($this->photo_url)) {
                 return Storage::url(self::PHOTO_DIRECTORY.DIRECTORY_SEPARATOR.$this->photo_url);
             } else {

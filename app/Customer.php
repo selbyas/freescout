@@ -6,7 +6,13 @@ use App\Email;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Watson\Rememberable\Rememberable;
+use function asset;
+use function filled;
+use function md5;
+use function str_is;
+use function urlencode;
 
 class Customer extends Model
 {
@@ -1242,16 +1248,27 @@ class Customer extends Model
         return '';
     }
 
+    public function getGravatarPhoto(): string
+    {
+        $hash = md5(Str::lower($this->getMainEmail()));
+        $default = asset('/img/default-avatar.png');
+        $default = urlencode($default);
+
+        return "https://www.gravatar.com/avatar/$hash?s=50&d=$default";
+    }
+
     public function getPhotoUrl($default_if_empty = true)
     {
-        if (!empty($this->photo_url) || !$default_if_empty) {
+        if(filled($this->photo_url) && str_is('*://*', $this->photo_url)) {
+            return $this->photo_url;
+        } else if (!empty($this->photo_url) || !$default_if_empty) {
             if (!empty($this->photo_url)) {
                 return self::getPhotoUrlByFileName($this->photo_url);
             } else {
                 return '';
             }
         } else {
-            return \Eventy::filter('customer.default_avatar', asset('/img/default-avatar.png'), $this);
+            return \Eventy::filter('customer.default_avatar', $this->getGravatarPhoto(), $this);
         }
     }
 

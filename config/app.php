@@ -430,6 +430,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\PolycastServiceProvider::class,
+        App\Providers\SelbyServiceProvider::class,
 
         /*
          * Custom Service Providers...
