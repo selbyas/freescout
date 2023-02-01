@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Watson\Rememberable\Rememberable;
+use function config;
+use function md5;
+use function urlencode;
 
 class User extends Authenticatable
 {
@@ -29,7 +32,7 @@ class User extends Authenticatable
 
     const PHOTO_DIRECTORY = 'users';
     const PHOTO_SIZE = 50; // px
-    const PHOTO_QUALITY = 77;
+    const PHOTO_QUALITY = 100;
 
     const EMAIL_MAX_LENGTH = 100;
 
@@ -122,7 +125,7 @@ class User extends Authenticatable
     protected $casts = [
         'permissions' => 'array',
     ];
-    
+
     /**
      * For array_unique function.
      *
@@ -783,6 +786,14 @@ class User extends Authenticatable
         \Cache::forget('user_web_notifications_'.$this->id);
     }
 
+    public function getGravatarPhoto(): string
+    {
+        $hash = md5(Str::lower($this->email));
+        $default = urlencode(config('selby-support.default_profile_picture_url'));
+
+        return "https://www.gravatar.com/avatar/$hash?s=50&d=$default";
+    }
+
     public function getPhotoUrl($default_if_empty = true)
     {
         if (!empty($this->photo_url) || !$default_if_empty) {
@@ -792,7 +803,7 @@ class User extends Authenticatable
                 return '';
             }
         } else {
-            return asset('/img/default-avatar.png');
+            return $this->getGravatarPhoto();
         }
     }
 
@@ -1100,7 +1111,7 @@ class User extends Authenticatable
             return true;
         }
         $alt_emails = explode(',', $this->emails ?? '');
-        
+
         foreach ($alt_emails as $alt_email) {
             if (Email::sanitizeEmail($alt_email) == $email) {
                 return true;
