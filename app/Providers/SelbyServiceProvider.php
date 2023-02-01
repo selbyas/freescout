@@ -30,7 +30,7 @@ class SelbyServiceProvider extends ServiceProvider
         /** @noinspection PhpUndefinedMethodInspection */
         Eventy::addFilter('footer.text', function() {
             return  '<a href="https://selby.no">'
-                    . '<img src="https://cdn.selby.as/brand/selby-logo-icon-180x180.png" width="64" alt="Selby Logo Icon"><br>'
+                    . '<img src="https://cdn.selby.as/brand/selby-logo-icon-180x180.png" width="16" alt="Selby Logo Icon" style="margin-right:6px;">'
                     . Config::get('app.name')
                     . '</a>';
         });
