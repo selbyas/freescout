@@ -29,8 +29,8 @@ class SelbyServiceProvider extends ServiceProvider
 
         /** @noinspection PhpUndefinedMethodInspection */
         Eventy::addFilter('footer.text', function() {
-            return '<img src="https://cdn.selby.as/brand/selby-logo-banner-320x89.png" width="183" alt="Selby Logo Banner"><br>'
-                    . '<a href="'.Config::get('app.freescout_repo').'">' . Config::get('app.name') . '</a>';
+            return '<img src="https://cdn.selby.as/brand/selby-logo-banner-320x89.png" width="100" alt="Selby Logo Banner"><br>'
+                    . '<a href="https://selby.no">' . Config::get('app.name') . '</a>';
         });
     }
 
