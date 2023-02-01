@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Support - Selby AS'),
+    'name' => env('APP_NAME', 'Selby Support'),
 
     /*
     |--------------------------------------------------------------------------
